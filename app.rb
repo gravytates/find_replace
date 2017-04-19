@@ -3,6 +3,7 @@ require('sinatra/reloader')
 require('pry')
 require('rspec')
 require('./lib/find_replace')
+also_reload('lib/**/*.rb')
 
 get('/') do
   erb(:index)
