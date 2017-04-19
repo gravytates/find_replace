@@ -9,7 +9,9 @@ get('/') do
 end
 
 get('/results') do
-  @input = params.fetch('input')
-  @string = @input.find_replace
+  @input_string = params.fetch('input-string')
+  @find = params.fetch('find')
+  @replace = params.fetch('replace')
+  @string = @input_string.find_replace(@find, @replace)
   erb(:results)
 end
